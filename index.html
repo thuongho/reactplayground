@@ -17,25 +17,8 @@
 <body>
   <div id="app"></div>
 
-  <div class="jumbotron">
-    <div class="container">
-      <h1>Hello, world!</h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-    </div>
-  </div>
-
   <div class="container">
-
-    <div class="row">
-      Main Content
-    </div>
-
-    <hr>
     
-    <footer>
-      <p>&copy; 2016 React Playground, Inc.</p>
-    </footer>
   </div>
 
   <script type="text/babel">
@@ -69,10 +52,60 @@
       }
     });
 
+    // Jumbotron Component
+    var Jumbotron = React.createClass({
+      render: function() {
+        return(
+          <div className="jumbotron">
+            <div className="container">
+              <h1>Hello, world!</h1>
+              <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+              <p><a className="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+            </div>
+          </div>
+        )
+      }
+    });
+
+    // Homepage Component
+    var PageHome = React.createClass({
+      render: function(){
+        return(
+          <div className="container">
+            <div className="row">
+              Main Content
+            </div>
+          </div>
+        )
+      }
+    });
+
+    // Footer Component
+    var Footer = React.createClass({
+      render: function(){
+        return(
+          <div className="container">
+            <hr />
+
+            <footer>
+              <p>&copy; 2016 React Playground, Inc.</p>
+            </footer>
+            
+          </div>
+        )
+      }
+    });
+
+    // Main App Component
     var App = React.createClass({
       render: function() {
         return(
-          <Navbar />
+          <div>
+            <Navbar />
+            <Jumbotron />
+            <PageHome />
+            <Footer />
+          </div>
         )
       }
     });
